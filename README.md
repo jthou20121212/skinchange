@@ -1,4 +1,8 @@
-# 使用方法
+# 引入
+```gradle
+compile 'com.jthou:skinchange:1.0.0'
+```
+# 使用
 ```kotlin
 class SkinApplication: Application() {
 
