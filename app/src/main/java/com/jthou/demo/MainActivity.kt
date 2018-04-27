@@ -30,7 +30,7 @@ class MainActivity : SkinActivity(), ItemClickSupport.OnItemClickListener, Permi
         recyclerView.adapter = mAdapter
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.addItemDecoration(DividerItemDecoration(this, DividerItemDecoration.VERTICAL))
-        ItemClickSupport.addTo(recyclerView).setOnItemClickListener(this)
+        ItemClickSupport.addTo(recyclerView)?.setOnItemClickListener(this)
     }
 
     private var mListener: PermissionListener? = null
@@ -66,7 +66,7 @@ class MainActivity : SkinActivity(), ItemClickSupport.OnItemClickListener, Permi
         L.e("权限申请失败")
     }
 
-    override fun onItemClicked(recyclerView: RecyclerView?, position: Int, v: View?) {
+    override fun onItemClicked(recyclerView: RecyclerView, position: Int, v: View) {
         val intent = Intent(this, SecondActivity::class.java)
         intent.putExtra("key_text", mData[position]?.name)
         startActivity(intent)
