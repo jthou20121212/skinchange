@@ -20,9 +20,8 @@ class SecondActivity : SkinActivity(), View.OnClickListener {
         id_default.setOnClickListener(this)
     }
 
-    override fun onClick(v: View?) {
-        val id = v?.id
-        when (id) {
+    override fun onClick(v: View) {
+        when (v.id) {
             id_click.id -> {
                 SkinManager.with(this).setPlugin(true)
                 SkinManager.with(this).skinChange()

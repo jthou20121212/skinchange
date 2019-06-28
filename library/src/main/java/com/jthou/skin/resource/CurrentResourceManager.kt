@@ -25,25 +25,23 @@ class CurrentResourceManager(resources: Resources, pluginPackageName: String) : 
 
     @ColorInt
     override fun getColorByResName(context: Context, resName: String): Int {
-        try {
+        return try {
             val id = mResources.getIdentifier(resName(resName), "color", mPluginPackageName)
-            return ContextCompat.getColor(context, id)
+            ContextCompat.getColor(context, id)
         } catch (e: NotFoundException) {
             e.printStackTrace()
+            -1
         }
-
-        return -1
     }
 
     override fun getColorStateListByResName(context: Context, resName: String): ColorStateList? {
-        try {
+        return try {
             val id = mResources.getIdentifier(resName(resName), "color", mPluginPackageName)
-            return ContextCompat.getColorStateList(context, id)
+            ContextCompat.getColorStateList(context, id)
         } catch (e: NotFoundException) {
             e.printStackTrace()
+            null
         }
-
-        return null
     }
 
 }
