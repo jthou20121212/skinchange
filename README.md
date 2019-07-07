@@ -50,3 +50,6 @@ SkinManager.with(this).setPlugin(true)
 SkinManager.with(this).skinChange()
 ```
 使用skinChange换肤
+
+# demo 
+随便点击一项进入下一个页面，点击红、绿、蓝文字会变成相应的颜色。使用plugin打包修改apk文件名为plugin-debug.zip放入sd根目录点击换肤可以修改icon和文字颜色
